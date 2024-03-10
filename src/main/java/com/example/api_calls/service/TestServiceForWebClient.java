@@ -14,10 +14,9 @@ public class TestServiceForWebClient {
 
     public Person queryPerson(){
         return webClient.get()
-                .uri("https://run.mocky.io/v3/0174cc82-7b01-411f-9448-01e57d7c7b89")
-                .retrieve()
-                .bodyToMono(Person.class)
-                .block();
-
+            .uri("https://run.mocky.io/v3/0174cc82-7b01-411f-9448-01e57d7c7b89")
+            .retrieve()
+            .bodyToMono(Person.class)
+            .block();
     }
 }

@@ -16,5 +16,7 @@ sudo update-alternatives --config java
 use Below get calls to test this application after starting
 
 http://localhost:3344/hellow/rest-template
+
 http://localhost:3344/hellow/feign-client
+
 http://localhost:3344/hellow/web-client
