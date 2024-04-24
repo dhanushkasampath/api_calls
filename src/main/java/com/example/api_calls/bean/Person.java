@@ -2,6 +2,9 @@ package com.example.api_calls.bean;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+/**
+ * Person class
+ */
 public class Person {
 
     private String firstName;
