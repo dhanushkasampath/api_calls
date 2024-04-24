@@ -3,14 +3,13 @@ package com.example.api_calls.service;
 import com.example.api_calls.bean.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Service
 public class TestServiceForWebClient {
 
     @Autowired
-    private WebClient webClient;
+    private WebClient webClient; // this is called field injection
 
     public Person queryPerson(){
         return webClient.get()
