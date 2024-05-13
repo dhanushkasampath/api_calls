@@ -16,6 +16,6 @@ public class TestServiceForRestTemplate {
      * @return Person
      */
     public Person queryPerson(){
-        return restTemplate.getForObject("https://run.mocky.io/v3/0174cc82-7b01-411f-9448-01e57d7c7b89", Person.class);
+        return restTemplate.getForObject("https://run.mocky.io/v3/c6959e9d-9090-4c2a-9118-1755a445d40b", Person.class);
     }
 }

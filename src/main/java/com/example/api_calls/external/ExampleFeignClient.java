@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Map;
 
-@FeignClient(name = "discounts-and-comps-data", url = "https://run.mocky.io/v3/0174cc82-7b01-411f-9448-01e57d7c7b89")
+@FeignClient(name = "discounts-and-comps-data", url = "https://run.mocky.io/v3/c6959e9d-9090-4c2a-9118-1755a445d40b")
 public interface ExampleFeignClient {
 
     String API_HOST_HEADER_NAME = "X-RapidAPI-Host";
