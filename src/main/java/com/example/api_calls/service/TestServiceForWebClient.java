@@ -13,7 +13,7 @@ public class TestServiceForWebClient {
 
     public Person queryPerson(){
         return webClient.get()
-            .uri("https://run.mocky.io/v3/c6959e9d-9090-4c2a-9118-1755a445d40b")
+            .uri("https://run.mocky.io/v3/fdc508a1-409e-43ec-af70-06fecc2a2392")
             .retrieve()
             .bodyToMono(Person.class)
             .block();

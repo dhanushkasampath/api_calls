@@ -6,14 +6,20 @@ import com.example.api_calls.service.TestServiceForFeignClient;
 import com.example.api_calls.service.TestServiceForHttpClient;
 import com.example.api_calls.service.TestServiceForRestTemplate;
 import com.example.api_calls.service.TestServiceForWebClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.io.IOException;
 
 @RestController
 public class TestController {
+
+    private static final Logger logger = LoggerFactory.getLogger(TestController.class);
+
 
     private final TestServiceForRestTemplate testServiceForRestTemplate;
     private final TestServiceForFeignClient testServiceForFeignClient;
@@ -33,7 +39,7 @@ public class TestController {
     @GetMapping("/hellow/rest-template/{user}")
     public Person getDataByRestTemplate(@PathVariable String user){
         if(!"dhanushka".equals(user)){
-            throw new ValidationException("Invalid user");
+            throw new ValidationException("Invalid user");// here exception is thrown
         }
         return testServiceForRestTemplate.queryPerson();
     }
@@ -45,7 +51,10 @@ public class TestController {
 
     @GetMapping("/hellow/web-client")
     public Person getDataByWebClient(){
-        return testServiceForWebClient.queryPerson();
+        logger.info("Request received to web-client");
+        Person person = testServiceForWebClient.queryPerson();
+        logger.info("Response returned: {}", person);
+        return person;
     }
 
     @GetMapping("/hellow/http-client")
@@ -53,8 +62,14 @@ public class TestController {
         return testServiceForHttpClient.queryData();
     }
 
+    /**
+     * we can redirect to a given url as follows
+     * @return
+     */
     @GetMapping("hellow")
-    public String test(){
-        return "hellow man";
+    public RedirectView test(){
+        String externalUrl = "https://en.wikipedia.org/wiki/Sri_Lanka";
+        return new RedirectView(externalUrl);
+//        return "hellow man";
     }
 }

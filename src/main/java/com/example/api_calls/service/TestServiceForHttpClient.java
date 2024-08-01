@@ -15,8 +15,9 @@ public class TestServiceForHttpClient {
         HttpClient httpClient = HttpClient.newHttpClient();
 
         HttpRequest request = HttpRequest.newBuilder(
-                        URI.create("https://www.w3schools.com/html/")).GET()
-                .build();
+            URI.create("https://www.w3schools.com/html/"))
+            .GET()
+            .build();
 
         HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 

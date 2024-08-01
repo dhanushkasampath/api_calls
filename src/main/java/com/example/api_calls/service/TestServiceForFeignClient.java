@@ -3,7 +3,6 @@ package com.example.api_calls.service;
 import com.example.api_calls.bean.Person;
 import com.example.api_calls.external.ExampleFeignClient;
 import org.springframework.stereotype.Service;
-import java.util.Map;
 
 @Service
 public class TestServiceForFeignClient {
